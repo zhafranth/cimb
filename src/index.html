@@ -61,7 +61,7 @@
       <nav class="container flex justify-between items-center">
         <img src="./asset/logo.svg" alt="logo" />
         <div
-          class="flex items-center justify-around gap-x-8 text-xl font-Rubik text-white"
+          class="hidden sm:flex items-center justify-around gap-x-8 text-xl font-Rubik text-white"
         >
           <a href="/" class="text-inherit">Home</a>
           <a href="/" class="text-inherit">Gallery</a>
@@ -72,9 +72,9 @@
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
-      <div class="container py-32 min-h-[650px] relative">
+      <div class="container py-32 min-h-[450] md:min-h-[650px] relative">
         <h2
-          class="font-RacingSans font-bold text-white w-2/6 mt-10 text-6xl relative"
+          class="font-RacingSans font-bold text-white w-3/6 sm:w-2/6 md:w-2/6 mt-[-20px] md:mt-10 text-2xl sm:text-4xl md:text-6xl relative z-50"
         >
           Cimb Niaga Finance Autoshow 2022
         </h2>
@@ -84,7 +84,7 @@
           <img
             src="./asset/hero-car.png"
             alt="bmw car"
-            class="h-full object-cover scale-150"
+            class="object-cover scale-150"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@
         <img
           src="./asset/frame-hero.png"
           alt="frame hero"
-          class="h-full object-cover scale-110"
+          class="h-auto md:h-full object-cover scale-75 md:scale-110"
         />
       </div>
     </section>
@@ -100,9 +100,11 @@
 
     <!-- Registration Section -->
     <section>
-      <div class="container py-32 min-h-[650px] flex justify-between">
-        <div class="w-2/6 text-white">
-          <h2 class="font-RacingSans text-4xl text-inherit">
+      <div
+        class="container py-20 md:py-32 min-h-[650px] flex justify-between flex-col md:flex-row"
+      >
+        <div class="w-full md:w-2/6 text-white">
+          <h2 class="font-RacingSans text-2xl md:text-4xl text-inherit">
             CIMB Niaga Finance <br />
             Autoshow 2022
           </h2>
@@ -118,9 +120,11 @@
 
             <p>Come and see for yourself, sign up now!</p>
           </div>
-          <h5 class="font-RacingSans text-2xl mt-20">#drivethefuture</h5>
+          <h5 class="font-RacingSans text-xl md:text-2xl mt-20">
+            #drivethefuture
+          </h5>
         </div>
-        <div class="flex-1 pl-16">
+        <div class="flex-1 pl-0 md:pl-16 mt-14 md:mt-0">
           <div
             class="p-8 bg-[#111111]"
             style="
@@ -180,29 +184,31 @@
     <section>
       <div class="container py-32">
         <!-- Tab button -->
-        <div class="flex gap-x-10 justify-center mx-auto text-white">
+        <div class="flex gap-x-4 md:gap-x-10 justify-center mx-auto text-white">
           <button
             onclick="openTab(event, 'video')"
-            class="video text-inherit tablinks active uppercase font-semibold"
+            class="video text-inherit tablinks text-sm md:text-xl active uppercase font-semibold"
           >
             Video
           </button>
           <div class="h-6 self-stretch w-[1px] bg-white"></div>
           <button
             onclick="openTab(event, 'program')"
-            class="program text-inherit tablinks uppercase font-semibold"
+            class="program text-inherit tablinks text-sm md:text-xl uppercase font-semibold"
           >
             Program
           </button>
           <div class="h-6 self-stretch w-[1px] bg-white"></div>
           <button
             onclick="openTab(event, 'agenda')"
-            class="agenda text-inherit tablinks uppercase font-semibold"
+            class="agenda text-inherit tablinks text-sm md:text-xl uppercase font-semibold"
           >
             Agenda
           </button>
         </div>
-        <h5 class="text-md text-white text-center mt-16 font-Rubik">
+        <h5
+          class="text-md text-sm md:text-xl text-white text-center mt-16 font-Rubik"
+        >
           Enjoy our interesting promo exclusively for this event only!
         </h5>
 
@@ -291,7 +297,7 @@
           id="agenda"
           class="min-h-[250px] tabcontent hidden w-full mt-12 mb-8"
         >
-          <div class="flex mx-auto w-4/6">
+          <div class="flex mx-auto w-full md:w-4/6">
             <img
               src="./asset/agenda.png"
               alt="agenda"
@@ -305,42 +311,44 @@
 
     <!-- Footer -->
     <footer class="container my-12">
-      <div class="flex justify-between text-white gap-x-12">
+      <div
+        class="flex flex-col md:flex-row justify-between text-white gap-x-12"
+      >
         <div>
           <img
             src="./asset/logo.svg"
             alt="logo cimb footer"
-            class="scale-110"
+            class="scale-110 mb-14 md:mb-0"
           />
         </div>
-        <div class="flex flex-col gap-y-4 w-2/6">
+        <div class="flex flex-col gap-y-4 w-full md:w-2/6">
           <div class="mb-8">
             <div class="h5 font-bold text-inherit mb-4">CIMB Niaga Finance</div>
-            <p>
+            <p class="text-sm md:text-md">
               Jl. Bintaro Utama 9 Blok B9/I no. 15 Bintaro Jaya Sektor IX Kel
               Pondok Pucung Kec. Pondok Aren Tangerang 15229
             </p>
           </div>
           <div class="mb-8">
             <div class="h5 font-bold text-inherit mb-4">Hubungi Kami</div>
-            <p class="font-bold">
+            <p class="font-bold text-sm md:text-md">
               Call Center: <span class="font-light">0804 1 090909 </span>
             </p>
-            <p class="font-bold">
+            <p class="font-bold text-sm md:text-md">
               Call Center: <span class="font-light"> info@cnaf.co.id</span>
             </p>
           </div>
         </div>
         <div class="flex flex-col gap-y-4">
           <div class="flex flex-col">
-            <p>Get our Mobile Application on</p>
+            <p class="mb-2">Get our Mobile Application on</p>
             <div class="flex">
               <img src="./asset/google-play.png" alt="google play" />
               <img src="./asset/cimb-mobile.png" alt="cimb mobile" />
             </div>
           </div>
           <div class="flex flex-col">
-            <p>Diawasi oleh</p>
+            <p class="mb-2">Diawasi oleh</p>
             <div class="flex">
               <img src="./asset/ojk.png" alt="Ojk logo" />
               <img src="./asset/inklusi keuangan.png" alt="inklusi keungan" />
@@ -350,9 +358,11 @@
         </div>
       </div>
       <div class="border-b-2 border-white w-full my-6 mb-12"></div>
-      <div class="flex justify-between">
-        <p class="text-white">©2022 CIMB Niaga Finance. All right reserved</p>
-        <div class="flex items-center gap-x-4">
+      <div class="flex justify-between md:flex-row flex-col">
+        <p class="text-white text-sm md:text-md">
+          ©2022 CIMB Niaga Finance. All right reserved
+        </p>
+        <div class="flex items-center gap-x-4 md:mt-0 mt-6">
           <a href="/">
             <img src="./asset/twitter-ic.svg" alt="twitter icon" />
           </a>
