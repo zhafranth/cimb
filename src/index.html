@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Rubik:wght@300;400;500;600;700&display=swap");
+    </style>
+    <style>
+      /* Create an active/current tablink class */
+      button.active {
+        color: #be1e2d;
+      }
+      .gallery {
+        background: #eee;
+      }
+
+      .slide {
+        margin: 0;
+        padding: 0;
+        /* width: 100%; */
+        height: 100%;
+        max-height: 360px;
+        transform: scale(1.2);
+      }
+      .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+      #arrow-left {
+        border-width: 12px 22px 12px 0;
+        border-color: transparent #fff transparent transparent;
+        left: 0;
+        margin-left: 12px;
+      }
+
+      #arrow-right {
+        border-width: 12px 0 12px 22px;
+        border-color: transparent transparent transparent #fff;
+        right: 0;
+        margin-right: 12px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body class="bg-black relative">
+    <!-- Header -->
+    <header class="min-h-[80px] absolute top-0 left-0 right-0 py-6 z-50">
+      <nav class="container flex justify-between items-center">
+        <img src="./asset/logo.svg" alt="logo" />
+        <div
+          class="flex items-center justify-around gap-x-8 text-xl font-Rubik text-white"
+        >
+          <a href="/" class="text-inherit">Home</a>
+          <a href="/" class="text-inherit">Gallery</a>
+        </div>
+      </nav>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <div class="container py-32 min-h-[650px] relative">
+        <h2
+          class="font-RacingSans font-bold text-white w-2/6 mt-10 text-6xl relative"
+        >
+          Cimb Niaga Finance Autoshow 2022
+        </h2>
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 w-1/2 h-1/2 my-auto mx-auto z-10"
+        >
+          <img
+            src="./asset/hero-car.png"
+            alt="bmw car"
+            class="h-full object-cover scale-150"
+          />
+        </div>
+      </div>
+      <div class="absolute top-0 right-[-300px] bottom-0 z-0">
+        <img
+          src="./asset/frame-hero.png"
+          alt="frame hero"
+          class="h-full object-cover scale-110"
+        />
+      </div>
+    </section>
+    <!-- End of Hero Section -->
+
+    <!-- Registration Section -->
+    <section>
+      <div class="container py-32 min-h-[650px] flex justify-between">
+        <div class="w-2/6 text-white">
+          <h2 class="font-RacingSans text-4xl text-inherit">
+            CIMB Niaga Finance <br />
+            Autoshow 2022
+          </h2>
+          <div class="flex flex-col gap-y-6 my-10">
+            <p>
+              CIMB Niaga Auto Finance proudly present, “CIMB Niaga Finance
+              Autoshow 2022”.
+            </p>
+            <p>
+              Exclusively with BMW Indonesia, we hereby invite you to join the
+              first 3D Virtual Exhibition in Indonesia.
+            </p>
+
+            <p>Come and see for yourself, sign up now!</p>
+          </div>
+          <h5 class="font-RacingSans text-2xl mt-20">#drivethefuture</h5>
+        </div>
+        <div class="flex-1 pl-16">
+          <div
+            class="p-8 bg-[#111111]"
+            style="
+              border: 2px solid;
+              border-image-source: linear-gradient(
+                121.33deg,
+                #9e9e9e 0.65%,
+                #000000 27.9%,
+                #ffffff 48.96%,
+                #000000 70.59%,
+                #9e9e9e 89.7%
+              );
+            "
+          >
+            <h3
+              class="font-RacingSans text-2xl text-white font-bld text-center mb-12"
+            >
+              Sign Up Now
+            </h3>
+            <div class="mb-6 flex flex-col">
+              <label class="text-white font-md" for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+              />
+            </div>
+            <div class="mb-6 flex flex-col">
+              <label class="text-white font-md" for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+              />
+            </div>
+            <div class="mb-6 flex flex-col">
+              <label class="text-white font-md" for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+              />
+            </div>
+            <button
+              type="submit"
+              class="uppercase px-8 py-2 text-white bg-primary mt-12"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Registration Section -->
+
+    <!-- Tab Section -->
+    <section>
+      <div class="container py-32">
+        <!-- Tab button -->
+        <div class="flex gap-x-10 justify-center mx-auto text-white">
+          <button
+            onclick="openTab(event, 'video')"
+            class="video text-inherit tablinks active uppercase font-semibold"
+          >
+            Video
+          </button>
+          <div class="h-6 self-stretch w-[1px] bg-white"></div>
+          <button
+            onclick="openTab(event, 'program')"
+            class="program text-inherit tablinks uppercase font-semibold"
+          >
+            Program
+          </button>
+          <div class="h-6 self-stretch w-[1px] bg-white"></div>
+          <button
+            onclick="openTab(event, 'agenda')"
+            class="agenda text-inherit tablinks uppercase font-semibold"
+          >
+            Agenda
+          </button>
+        </div>
+        <h5 class="text-md text-white text-center mt-16 font-Rubik">
+          Enjoy our interesting promo exclusively for this event only!
+        </h5>
+
+        <!-- Content Section -->
+        <div
+          id="video"
+          class="min-h-[250px] tabcontent block w-full mt-12 mb-8 justify-center"
+        >
+          <div class="flex justify-center mx-auto">
+            <iframe
+              class="w-[760px] h-[455px]"
+              src="https://www.youtube.com/embed/b5wpJNS3skM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div
+          id="program"
+          class="min-h-[250px] tabcontent hidden w-ful mt-12 mb-8"
+        >
+          <div class="relative sm:hidden flex justify-center items-center">
+            <div id="arrow-left" class="arrow"></div>
+            <div class="slide slide1">
+              <img src="./asset/poster.png" alt="" />
+            </div>
+            <div class="slide slide2">
+              <img src="./asset/poster-2.png" alt="" />
+            </div>
+            <div class="slide slide3">
+              <img src="./asset/poster.png" alt="" />
+            </div>
+            <div id="arrow-right" class="arrow"></div>
+          </div>
+          <div class="relative sm:flex justify-center gap-x-0 hidden">
+            <div
+              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
+            >
+              <img
+                src="./asset/poster.png"
+                alt="poster 1"
+                class="object-cover w-full"
+              />
+            </div>
+            <div
+              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
+            >
+              <img
+                src="./asset/poster.png"
+                alt="poster 1"
+                class="object-cover w-full"
+              />
+            </div>
+            <div
+              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
+            >
+              <img
+                src="./asset/poster.png"
+                alt="poster 1"
+                class="object-cover w-full"
+              />
+            </div>
+            <div
+              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
+            >
+              <img
+                src="./asset/poster.png"
+                alt="poster 1"
+                class="object-cover w-full"
+              />
+            </div>
+            <div
+              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
+            >
+              <img
+                src="./asset/poster.png"
+                alt="poster 1"
+                class="object-cover w-full"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          id="agenda"
+          class="min-h-[250px] tabcontent hidden w-full mt-12 mb-8"
+        >
+          <div class="flex mx-auto w-4/6">
+            <img
+              src="./asset/agenda.png"
+              alt="agenda"
+              class="object-cover w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Tab Section -->
+
+    <!-- Footer -->
+    <footer class="container my-12">
+      <div class="flex justify-between text-white gap-x-12">
+        <div>
+          <img
+            src="./asset/logo.svg"
+            alt="logo cimb footer"
+            class="scale-110"
+          />
+        </div>
+        <div class="flex flex-col gap-y-4 w-2/6">
+          <div class="mb-8">
+            <div class="h5 font-bold text-inherit mb-4">CIMB Niaga Finance</div>
+            <p>
+              Jl. Bintaro Utama 9 Blok B9/I no. 15 Bintaro Jaya Sektor IX Kel
+              Pondok Pucung Kec. Pondok Aren Tangerang 15229
+            </p>
+          </div>
+          <div class="mb-8">
+            <div class="h5 font-bold text-inherit mb-4">Hubungi Kami</div>
+            <p class="font-bold">
+              Call Center: <span class="font-light">0804 1 090909 </span>
+            </p>
+            <p class="font-bold">
+              Call Center: <span class="font-light"> info@cnaf.co.id</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-y-4">
+          <div class="flex flex-col">
+            <p>Get our Mobile Application on</p>
+            <div class="flex">
+              <img src="./asset/google-play.png" alt="google play" />
+              <img src="./asset/cimb-mobile.png" alt="cimb mobile" />
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <p>Diawasi oleh</p>
+            <div class="flex">
+              <img src="./asset/ojk.png" alt="Ojk logo" />
+              <img src="./asset/inklusi keuangan.png" alt="inklusi keungan" />
+            </div>
+            <p class="text-sm">Syarat dan Ketentuan</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-b-2 border-white w-full my-6 mb-12"></div>
+      <div class="flex justify-between">
+        <p class="text-white">©2022 CIMB Niaga Finance. All right reserved</p>
+        <div class="flex items-center gap-x-4">
+          <a href="/">
+            <img src="./asset/twitter-ic.svg" alt="twitter icon" />
+          </a>
+          <a href="/">
+            <img src="./asset/instagram-tc.svg" alt="instagram icon" />
+          </a>
+          <a href="/">
+            <img src="./asset/linkedin-ic.svg" alt="linkedin icon" />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </body>
+  <script src="./index.js"></script>
+</html>
