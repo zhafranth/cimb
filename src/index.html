@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/flickity@2/dist/flickity.min.css"
@@ -56,8 +56,35 @@
     <title>Document</title>
   </head>
   <body class="bg-black relative">
+    <button
+      class="fixed bottom-[2rem] md:bottom-[5.5rem] left-[2rem] md:left-[5.5rem] py-2 px-4 rounded-full bg-[#BE1E2D] border-[1px] border-white flex gap-x-2 text-white z-50"
+    >
+      <img src="./asset/world-icon.svg" alt="world icoin" />
+      cnaf.co.id
+    </button>
+    <div
+      class="fixed top-0 left-0 bottom-0 right-0 w-full h-full z-50 hidden"
+      id="sidebar"
+    >
+      <div class="w-2/6 h-full bg-black bg-opacity-70"></div>
+      <div class="w-full h-full bg-[#BE1E2D] p-12">
+        <div class="flex">
+          <button
+            class="bg-transparent flex ml-auto"
+            type="button"
+            onclick="showSidebar()"
+          >
+            <img src="./asset/close-icon.svg" alt="close" />
+          </button>
+        </div>
+        <div class="flex flex-col gap-y-6 mt-20 text-white font-bold">
+          <button class="bg-tranparen text-left text-inherit">HOME</button>
+          <button class="bg-tranparen text-left text-inherit">GALERRY</button>
+        </div>
+      </div>
+    </div>
     <!-- Header -->
-    <header class="min-h-[80px] absolute top-0 left-0 right-0 py-6 z-50">
+    <header class="min-h-[80px] absolute top-0 left-0 right-0 py-6 z-40">
       <nav class="container flex justify-between items-center">
         <img src="./asset/logo.svg" alt="logo" />
         <div
@@ -66,6 +93,9 @@
           <a href="/" class="text-inherit">Home</a>
           <a href="/" class="text-inherit">Gallery</a>
         </div>
+        <button onclick="showSidebar()" type="button" class="block sm:hidden">
+          <img src="./asset/menu-icon.svg" alt="menu" />
+        </button>
       </nav>
     </header>
     <!-- End of Header -->
@@ -74,7 +104,7 @@
     <section class="relative overflow-hidden">
       <div class="container py-32 min-h-[450] md:min-h-[650px] relative">
         <h2
-          class="font-RacingSans font-bold text-white w-3/6 sm:w-2/6 md:w-2/6 mt-[-20px] md:mt-10 text-2xl sm:text-4xl md:text-6xl relative z-50"
+          class="font-RacingSans font-bold text-white w-3/6 sm:w-2/6 md:w-2/6 mt-[-20px] md:mt-10 text-2xl sm:text-4xl md:text-6xl relative z-40"
         >
           Cimb Niaga Finance Autoshow 2022
         </h2>
