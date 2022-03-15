@@ -84,7 +84,9 @@
       </div>
     </div>
     <!-- Header -->
-    <header class="min-h-[80px] absolute top-0 left-0 right-0 py-6 z-40">
+    <header
+      class="min-h-[80px] fixed bg-black bg-opacity-80 top-0 left-0 right-0 py-6 z-50"
+    >
       <nav class="container flex justify-between items-center">
         <img src="./asset/logo.svg" alt="logo" />
         <div
@@ -169,41 +171,58 @@
               );
             "
           >
-            <h3
-              class="font-RacingSans text-2xl text-white font-bld text-center mb-12"
+            <div>
+              <h3
+                class="font-RacingSans text-2xl text-white font-bld text-center mb-12"
+              >
+                Sign Up Now
+              </h3>
+              <div class="mb-6 flex flex-col">
+                <label class="text-white font-md" for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+                />
+              </div>
+              <div class="mb-6 flex flex-col">
+                <label class="text-white font-md" for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+                />
+              </div>
+              <div class="mb-6 flex flex-col">
+                <label class="text-white font-md" for="phone">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
+                />
+              </div>
+              <button
+                type="submit"
+                class="uppercase px-8 py-2 text-white bg-primary mt-12"
+              >
+                Submit
+              </button>
+            </div>
+            <!-- <div
+              class="min-h-[506px] flex flex-col gap-y-6 justify-center items-center text-white"
             >
-              Sign Up Now
-            </h3>
-            <div class="mb-6 flex flex-col">
-              <label class="text-white font-md" for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
-              />
-            </div>
-            <div class="mb-6 flex flex-col">
-              <label class="text-white font-md" for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
-              />
-            </div>
-            <div class="mb-6 flex flex-col">
-              <label class="text-white font-md" for="phone">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
-              />
-            </div>
-            <button
-              type="submit"
-              class="uppercase px-8 py-2 text-white bg-primary mt-12"
-            >
-              Submit
-            </button>
+              <h2 class="text-4xl font-RacingSans">Thank you</h2>
+              <div class="w-1/4">
+                <img
+                  src="./asset/success.png"
+                  alt="success"
+                  class="object-cover w-full"
+                />
+              </div>
+              <p class="font-RacingSans text-center text-2xl">
+                Our customer service will contact you as soon as possible!
+              </p>
+            </div> -->
           </div>
         </div>
       </div>
