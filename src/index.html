@@ -346,12 +346,176 @@
           id="agenda"
           class="min-h-[250px] tabcontent hidden w-full mt-12 mb-8"
         >
-          <div class="flex mx-auto w-full md:w-4/6">
+          <!-- <div class="flex mx-auto w-full md:w-4/6">
             <img
               src="./asset/agenda.png"
               alt="agenda"
               class="object-cover w-full"
             />
+          </div> -->
+          <div class="hidden md:block">
+            <div class="flex mx-auto">
+              <table class="mx-auto">
+                <tbody>
+                  <tr class="bg-primary p-8">
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-20">Day</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-24">Hour</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-40">Activity</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-28">PIC</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#111111] p-8">
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-20">Day-1</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-24">08.00 - 09.00</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-40">Opening Ceremony</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-28">CEO</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#222222] p-8">
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-20">Day-2</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-24">09.09 - 10.00</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-40">Media Conference & Testing</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-28">Marcom</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#111111] p-8">
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-20">Day-3</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-24">08.00 - 09.00</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-40">Bidding Online</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-28">Program</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#222222] p-8">
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-20">Day-4</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-24">09.09 - 10.00</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-40">Fitra Eri Session</p>
+                    </td>
+                    <td class="p-6 border-[1px] border-white">
+                      <p class="text-white w-28">Marcom</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="block md:hidden">
+            <div class="flex flex-col mx-auto gap-y-10">
+              <table class="mx-auto border-2 border-white">
+                <tbody>
+                  <tr class="bg-primary p-8">
+                    <td class="p-6">
+                      <p class="text-white w-72 text-center text-xl">Day 1</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#111111] p-8">
+                    <td class="p-6">
+                      <div class="flex gap-x-12">
+                        <div>
+                          <p class="text-[#9E9E9E]">Hour</p>
+                          <p class="text-[#9E9E9E]">Activity</p>
+                          <p class="text-[#9E9E9E]">PIC</p>
+                        </div>
+                        <div>
+                          <p class="text-white">08.00 - 09.00</p>
+                          <p class="text-white">Opening Ceremony</p>
+                          <p class="text-white">CEO</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#222222] p-8">
+                    <td class="p-6">
+                      <div class="flex gap-x-12">
+                        <div>
+                          <p class="text-[#9E9E9E]">Hour</p>
+                          <p class="text-[#9E9E9E]">Activity</p>
+                          <p class="text-[#9E9E9E]">PIC</p>
+                        </div>
+                        <div>
+                          <p class="text-white">09.00 - 10.00</p>
+                          <p class="text-white">Media Conferences & Testing</p>
+                          <p class="text-white">Marcom</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="mx-auto border-2 border-white">
+                <tbody>
+                  <tr class="bg-primary p-8">
+                    <td class="p-6">
+                      <p class="text-white w-72 text-center text-xl">Day 2</p>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#111111] p-8">
+                    <td class="p-6">
+                      <div class="flex gap-x-12">
+                        <div>
+                          <p class="text-[#9E9E9E]">Hour</p>
+                          <p class="text-[#9E9E9E]">Activity</p>
+                          <p class="text-[#9E9E9E]">PIC</p>
+                        </div>
+                        <div>
+                          <p class="text-white">08.00 - 09.00</p>
+                          <p class="text-white">Bidding Online</p>
+                          <p class="text-white">Program</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="bg-[#222222] p-8">
+                    <td class="p-6">
+                      <div class="flex gap-x-12">
+                        <div>
+                          <p class="text-[#9E9E9E]">Hour</p>
+                          <p class="text-[#9E9E9E]">Activity</p>
+                          <p class="text-[#9E9E9E]">PIC</p>
+                        </div>
+                        <div>
+                          <p class="text-white">09.00 - 10.00</p>
+                          <p class="text-white">Fitra Eri Session</p>
+                          <p class="text-white">Marcom</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
