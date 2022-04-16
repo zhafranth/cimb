@@ -4,15 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="output.css" rel="stylesheet" />
+    <link href="./output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/flickity@2/dist/flickity.min.css"
     />
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="./magnific-popup.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Rubik:wght@300;400;500;600;700&display=swap");
     </style>
+
     <style>
       /* Create an active/current tablink class */
       button.active {
@@ -52,12 +59,18 @@
         right: 0;
         margin-right: 12px;
       }
+      .swiper-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: -3px;
+      }
     </style>
     <title>Document</title>
   </head>
   <body class="bg-black relative">
     <button
-      class="fixed bottom-[2rem] md:bottom-[5.5rem] left-[2rem] md:left-[5.5rem] py-2 px-4 rounded-full bg-[#BE1E2D] border-[1px] border-white flex gap-x-2 text-white z-50"
+      class="fixed bottom-[2rem] md:bottom-[5.5rem] left-[2rem] md:left-[3.5rem] py-2 px-4 rounded-full bg-[#BE1E2D] border-[1px] border-white flex gap-x-2 text-white z-50"
     >
       <img src="./asset/world-icon.svg" alt="world icoin" />
       cnaf.co.id
@@ -77,9 +90,13 @@
             <img src="./asset/close-icon.svg" alt="close" />
           </button>
         </div>
-        <div class="flex flex-col gap-y-6 mt-20 text-white font-bold">
-          <button class="bg-tranparen text-left text-inherit">HOME</button>
-          <button class="bg-tranparen text-left text-inherit">GALERRY</button>
+        <div
+          class="flex flex-col gap-y-6 mt-20 text-white font-bold link-navbar"
+        >
+          <a class="bg-tranparen text-left text-inherit" href="#home">HOME</a>
+          <a class="bg-tranparen text-left text-inherit" href="#gallery"
+            >GALERRY</a
+          >
         </div>
       </div>
     </div>
@@ -88,12 +105,16 @@
       class="min-h-[80px] fixed bg-black bg-opacity-80 top-0 left-0 right-0 py-6 z-50"
     >
       <nav class="container flex justify-between items-center">
-        <img src="./asset/logo.svg" alt="logo" />
+        <img
+          src="./asset/logo.svg"
+          alt="logo"
+          style="filter: drop-shadow(1px 1px 1px #bbb)"
+        />
         <div
-          class="hidden sm:flex items-center justify-around gap-x-8 text-xl font-Rubik text-white"
+          class="hidden sm:flex items-center justify-around gap-x-8 text-xl font-Rubik text-white link-navbar"
         >
-          <a href="/" class="text-inherit">Home</a>
-          <a href="/" class="text-inherit">Gallery</a>
+          <a href="#home" class="text-inherit">Home</a>
+          <a href="#gallery" class="text-inherit">Gallery</a>
         </div>
         <button onclick="showSidebar()" type="button" class="block sm:hidden">
           <img src="./asset/menu-icon.svg" alt="menu" />
@@ -103,8 +124,8 @@
     <!-- End of Header -->
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden">
-      <div class="container py-32 min-h-[450] md:min-h-[650px] relative">
+    <section class="relative overflow-hidden mt-[80px]" id="home">
+      <!-- <div class="container py-32 min-h-[450] md:min-h-[650px] relative">
         <h2
           class="font-RacingSans font-bold text-white w-3/6 sm:w-2/6 md:w-2/6 mt-[-20px] md:mt-10 text-2xl sm:text-4xl md:text-6xl relative z-40"
         >
@@ -119,14 +140,21 @@
             class="object-cover scale-150"
           />
         </div>
+      </div> -->
+      <div class="overflow-hidden">
+        <img
+          src="./asset/Banner_Virtual_Exhibiton.jpg"
+          alt="cover banner"
+          class="h-auto md:h-full object-cover"
+        />
       </div>
-      <div class="absolute top-0 right-[-300px] bottom-0 z-0">
+      <!-- <div class="absolute top-0 right-[-300px] bottom-0 z-0">
         <img
           src="./asset/frame-hero.png"
           alt="frame hero"
           class="h-auto md:h-full object-cover scale-75 md:scale-110"
         />
-      </div>
+      </div> -->
     </section>
     <!-- End of Hero Section -->
 
@@ -201,6 +229,10 @@
                   class="p-2 outline-none bg-gray-800 bg-opacity-50 border-[1px] border-gray-700 text-md text-white"
                 />
               </div>
+              <div
+                class="g-recaptcha brochure__form__captcha"
+                data-sitekey="YOUR SITE KEY"
+              ></div>
               <button
                 type="submit"
                 class="uppercase px-8 py-2 text-white bg-primary mt-12"
@@ -230,7 +262,7 @@
     <!-- End of Registration Section -->
 
     <!-- Tab Section -->
-    <section>
+    <section id="gallery">
       <div class="container py-32">
         <!-- Tab button -->
         <div class="flex gap-x-4 md:gap-x-10 justify-center mx-auto text-white">
@@ -295,50 +327,73 @@
             <div id="arrow-right" class="arrow"></div>
           </div>
           <div class="relative sm:flex justify-center gap-x-0 hidden">
-            <div
-              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
-            >
-              <img
-                src="./asset/poster.png"
-                alt="poster 1"
-                class="object-cover w-full"
-              />
-            </div>
-            <div
-              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
-            >
-              <img
-                src="./asset/poster.png"
-                alt="poster 1"
-                class="object-cover w-full"
-              />
-            </div>
-            <div
-              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
-            >
-              <img
-                src="./asset/poster.png"
-                alt="poster 1"
-                class="object-cover w-full"
-              />
-            </div>
-            <div
-              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
-            >
-              <img
-                src="./asset/poster.png"
-                alt="poster 1"
-                class="object-cover w-full"
-              />
-            </div>
-            <div
-              class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all"
-            >
-              <img
-                src="./asset/poster.png"
-                alt="poster 1"
-                class="object-cover w-full"
-              />
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div>
+                    <a
+                      class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all show-image"
+                      href="./asset/poster.png"
+                    >
+                      <img
+                        src="./asset/poster.png"
+                        alt="poster 1"
+                        class="object-cover"
+                      />
+                    </a>
+                    <p class="text-white">Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div>
+                    <a
+                      class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all show-image"
+                      href="./asset/poster.png"
+                    >
+                      <img
+                        src="./asset/poster.png"
+                        alt="poster 1"
+                        class="object-cover"
+                      />
+                    </a>
+                    <p class="text-white">Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div>
+                    <a
+                      class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all show-image"
+                      href="./asset/poster.png"
+                    >
+                      <img
+                        src="./asset/poster.png"
+                        alt="poster 1"
+                        class="object-cover"
+                      />
+                    </a>
+                    <p class="text-white">Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <a
+                    class="p-2 scale-90 opacity-40 hover:cursor-pointer hover:opacity-100 hover:scale-110 transition-all show-image"
+                    href="./asset/poster.png"
+                  >
+                    <img
+                      src="./asset/poster.png"
+                      alt="poster 1"
+                      class="object-cover"
+                    />
+                  </a>
+                  <p class="text-white">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere, illo.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -355,7 +410,14 @@
           </div> -->
           <div class="hidden md:block">
             <div class="flex mx-auto">
-              <table class="mx-auto">
+              <table
+                class="mx-auto"
+                style="
+                  border-collapse: collapse;
+                  border-radius: 12px;
+                  overflow: hidden;
+                "
+              >
                 <tbody>
                   <tr class="bg-primary p-8">
                     <td class="p-6 border-[1px] border-white">
@@ -522,6 +584,12 @@
     </section>
     <!-- End of Tab Section -->
 
+    <!-- Testing Swiper -->
+    <section>
+      <div class="container py-32"></div>
+    </section>
+    <!-- End of testing swiper -->
+
     <!-- Footer -->
     <footer class="container my-12">
       <div
@@ -532,6 +600,7 @@
             src="./asset/logo.svg"
             alt="logo cimb footer"
             class="scale-110 mb-14 md:mb-0"
+            style="filter: drop-shadow(1px 1px 1px #bbb)"
           />
         </div>
         <div class="flex flex-col gap-y-4 w-full md:w-2/6">
@@ -591,4 +660,30 @@
     <!-- End of Footer -->
   </body>
   <script src="./index.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      slidesPerView: 3,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
+  <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Magnific Popup core JS file -->
+  <script src="./jquery.magnific-popup.min.js"></script>
 </html>

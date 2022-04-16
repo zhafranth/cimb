@@ -70,3 +70,31 @@ function showSidebar() {
     x.style.display = "none";
   }
 }
+
+const links = document.querySelectorAll(".link-navbar a");
+
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  scroll({
+    top: offsetTop,
+    behavior: "smooth",
+  });
+}
+
+// $(".swiper-slide").magnificPopup({
+//   delegate: "a", // child items selector, by clicking on it popup will open
+//   type: "image",
+//   // other options
+// });
+// $(".show-image").magnificPopup({
+//   type: "image",
+//   // other options
+// });
+// $(".show-image").;
